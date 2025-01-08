@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Videos</title>
+
+    </head>
+    <body>
+        <h1>Your videos</h1><br><br>
+        <hr>
+        
+        {% for video in videos %}
+
+            <h3>{{ video.name }}</h3>
+            <video controls>
+                <source src="{{ video.video.url }}" type="video/mp4"> 
+            </video>
+            <hr>
+        {% empty %}
+            <p>Hozircha video yo'q.</p>
+        {% endfor %}
+
+
+    </body>
+</html>
